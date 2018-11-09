@@ -29,7 +29,7 @@ frames = []
 for i in range(0, int(RATE/CHUNK*RECORD_SECONDS)):
     data  = stream.read(CHUNK)
     frames.append(data)
-    server.sendto(data, ('255.255.255.255', 12345))
+    server.sendto(data, ('10.42.0.255', 12345))
 
 print("*done recording")
 
