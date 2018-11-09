@@ -3,7 +3,7 @@ import pyaudio
 import wave
 
 #record
-CHUNK = 512
+CHUNK = 1024
 FORMAT = pyaudio.paInt16
 CHANNELS = 1
 RATE = 44100
@@ -29,9 +29,7 @@ frames = []
 for i in range(0, int(RATE/CHUNK*RECORD_SECONDS)):
     data  = stream.read(CHUNK)
     frames.append(data)
-    udp_header = struct.pack('---------1---------', sport, dport, length, checksum)
-
-    server.sendto(udp_header+data, ('255.255.255.255', 12345))
+    server.sendto(data, ('255.255.255.255', 12345))
 
 print("*done recording")
 
