@@ -3,7 +3,7 @@ import pyaudio
 import wave
 
 #record
-CHUNK = 1024
+CHUNK = 512
 FORMAT = pyaudio.paInt16
 CHANNELS = 1
 RATE = 44100
