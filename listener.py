@@ -25,8 +25,8 @@ print('wait')
 
 i=1
 while True:
-    print(1)
     data, addr = client.recvfrom(1024)
+    print(addr,data)
     stream.write(data)
     frames.append(data)
 
